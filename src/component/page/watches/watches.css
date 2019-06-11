@@ -1,0 +1,7 @@
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1366px;
+  /* overflow-y: inherit; */
+}

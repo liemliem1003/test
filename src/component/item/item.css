@@ -1,0 +1,11 @@
+.item{
+  width: 200px;
+  height: 280px;
+  background: white;
+  margin: 5px;
+}
+img{
+  width: 150px;
+  height: 150px;
+  margin: 10px 0 0px 0;
+}
