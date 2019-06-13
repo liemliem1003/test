@@ -1,28 +1,22 @@
-.container{
-  justify-content: center;
-  align-items: center;
-  width: 1000px;
-  margin: auto;
-
-}
-.frame{
-  width: 100%;
-  height: 300px;
-  margin: 10px 0 30px 0;
+.checkout-product{
   display: flex;
-  justify-content: center;
-  align-items: center;
   border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
-}
-.watches{
-  background: white;
+  width: 400px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 
 }
-.clothes{
-  background: white;
+.checkout-product div{
+  padding: 0 10px 0 10px;
 }
-.shoes{
-  background: white;
+.checkout-product button{
+  height: 20px;
+}
+.checkout-area{
+  display: flex;
+}
+.container{
+  margin: 50px;
 }

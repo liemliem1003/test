@@ -2,6 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1366px;
+  width: 1000px;
+  margin: auto;
   /* overflow-y: inherit; */
+}
+.group-btn{
+  margin: 20px;
+}
+.group-btn button{
+  color: #000;
+  margin: 10px;
+  width: 170px;
+  height: 40px;
+  border-radius: 25px;
+  border: 0px;
+  text-transform: uppercase;
+}
+.group-btn button:hover{
+  background-color: #000;
+  color: white;
 }

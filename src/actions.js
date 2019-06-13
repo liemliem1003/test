@@ -6,6 +6,8 @@ export const NAVIGATE = 'NAVIGATE'
 export const CHECKOUT = 'CHECKOUT'
 export const SETPRODUCTS = 'SETPRODUCTS'
 export const GETPRODUCTS = 'GETPRODUCTS'
+export const SORTBYNAME = 'SORTBYNAME'
+export const SORTBYPRICE = 'SORTBYPRICE'
 
 const setProducts = products => {
   return {
@@ -14,6 +16,20 @@ const setProducts = products => {
   }
 }
 
+const sortByPrice = products =>{
+  return {
+    type: SORTBYNAME,
+    payload: products,
+  }
+}
+
+
+const sortByName = products =>{
+  return {
+    type: SORTBYNAME,
+    payload: products,
+  }
+}
 
 const addProduct = product => {
   return {
@@ -40,10 +56,10 @@ const removeCartItem = id => {
   }
 }
 
-const changeCartQuantity = (id, newQuantity) => {
+const changeQuantity = (product, condition) => {
   return {
     type: CHANGE_CART_QUANTITY,
-    payload: {id, quantity: newQuantity},
+    payload: product
   }
 }
 
@@ -53,5 +69,7 @@ export default {
   navigate,
   checkout,
   removeCartItem,
-  changeCartQuantity,
+  changeQuantity,
+  sortByName,
+  sortByPrice
 }

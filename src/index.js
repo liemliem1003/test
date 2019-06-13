@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 import App from './App'
-import store from './store'
+import store from './store.js'
 // import * as serviceWorker from './serviceWorker'; //Run offline // Progressive web app
 
 ReactDOM.render(

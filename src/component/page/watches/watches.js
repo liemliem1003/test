@@ -5,40 +5,39 @@ import {connect} from 'react-redux'
 import actions from '../../../actions'
 
 function Watches(props){
-  // console.log(props);
-  const propsOfItem = props.watches
+  const propsOfItem = props.products.Watches
   const list=propsOfItem.map((product, i) => (
-
       <div key={i}>
-        <Item img={product.img} name={product.name} details={product.details} onClick={props.addProduct}/>
+        <Item img={product.img} name={product.name} price={product.price} onClick={()=>props.addProduct(product)}/>
       </div>
     )
   )
   return(
     <div>
-      <div>
-        <button>sort</button>
-        <button>sort</button>
-        <button>sort</button>
-        <button>sort</button>
+      <div className="group-btn">
+        <button onClick={()=>props.sortByName({condition:true,kind:"Clothes"})}>sort by name<br/>from a to z</button>
+        <button onClick={()=>props.sortByName({condition:false,kind:"Clothes"})}>sort by name<br/>from z to a</button>
+        <button onClick={()=>props.sortByPrice({condition:true,kind:"Clothes"})}>sort by price<br/>(descending)</button>
+        <button onClick={()=>props.sortByPrice({condition:false,kind:"Clothes"})}>sort by price<br/>(ascending)</button>
       </div>
-      {list}
+      <div className="list">{list}</div>
     </div>
   )
 }
 const mapStateToProps = state => {
-  // console.log(state)
-  // console.log(state);
-  return {
-
-    watches: state.products.Watches,
-  }
+  return state
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     addProduct: product => {
       dispatch(actions.addProduct(product))
+    },
+    sortByName: condition =>{
+      dispatch(actions.sortByName(condition))
+    },
+    sortByPrice: condition =>{
+      dispatch(actions.sortByPrice(condition))
     },
   }
 }

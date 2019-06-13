@@ -8,27 +8,41 @@ import Watches from './component/page/watches/watches.js'
 import About from './component/page/about/about.js'
 import ShoppingCart from './component/page/shoppingcart/shoppingcart.js'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import actions from './actions'
 
-
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <div>
-          <NavBar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
+class App extends React.Component {
+  render(){
+    return (
+      <div className="App">
+        <Router>
+          <div>
+            <NavBar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
               <Route path="/clothes" component={Clothes} />
-            <Route path="/shoes" component={Shoes} />
-            <Route path="/watches" component={Watches} />
-            <Route path="/shoppingcart" component={ShoppingCart} />
-            <Redirect to="/" />
-          </Switch>
-        </div>
-      </Router>
-    </div>
-  );
+              <Route path="/shoes" component={Shoes} />
+              <Route path="/watches" component={Watches} />
+              <Route path="/shoppingcart" component={ShoppingCart} />
+              <Redirect to="/" />
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    getProducts: () => {
+      dispatch(actions.getProducts())
+    },
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App)
