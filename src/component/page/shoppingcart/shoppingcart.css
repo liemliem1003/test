@@ -1,7 +1,7 @@
 .checkout-product{
   display: flex;
   border-style: solid;
-  width: 400px;
+  width: 500px;
   height: 30px;
   align-items: center;
   justify-content: center;
@@ -18,5 +18,5 @@
   display: flex;
 }
 .container{
-  margin: 50px;
+  margin: 100px 50px 50px 50px;
 }

@@ -10,15 +10,19 @@
   margin: 20px;
 }
 .group-btn button{
-  color: #000;
+  background-color: black;
+  color: white;
   margin: 10px;
   width: 170px;
   height: 40px;
-  border-radius: 25px;
-  border: 0px;
+  border: 1px;
   text-transform: uppercase;
+  -webkit-transition: border-radius 0.4s;
+  transition: border-radius 0.4s;
 }
 .group-btn button:hover{
-  background-color: #000;
-  color: white;
+  border-radius: 25px;
+}
+.page{
+  margin-top: 100px;
 }

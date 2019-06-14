@@ -14,7 +14,7 @@ function Shoes(props){
     )
   )
   return(
-    <div>
+    <div className="page">
       <div className="group-btn">
         <button onClick={()=>props.sortByName({condition:true,kind:"Clothes"})}>sort by name<br/>from a to z</button>
         <button onClick={()=>props.sortByName({condition:false,kind:"Clothes"})}>sort by name<br/>from z to a</button>

@@ -15,7 +15,7 @@ function Item(props){
       <img src={props.img}/>
       <div>{props.name}</div>
       <div>{numberWithCommas(props.price)}</div>
-      <button onClick={props.onClick}>ADD TO CART</button>
+      <button className="add-to-cart-btn" onClick={props.onClick}>ADD TO CART</button>
     </div>
   )
 }

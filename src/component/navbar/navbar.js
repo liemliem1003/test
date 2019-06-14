@@ -15,7 +15,9 @@ function NavBar(){
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/shoppingcart">Shopping Cart</Link></li>
         </ul>
+        <a>a</a>
       </nav>
+
     </div>
   )
 }

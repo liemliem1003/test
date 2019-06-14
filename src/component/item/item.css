@@ -1,11 +1,42 @@
 .item{
+  position: relative;
   width: 200px;
   height: 280px;
   background: white;
   margin: 5px;
+  border: 1.2px solid black;
+  border-radius: 5px;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 img{
   width: 150px;
   height: 150px;
   margin: 10px 0 0px 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.add-to-cart-btn{
+  opacity: 0;
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  -webkit-transition: opacity 0.4s,border-radius 0.4s, top 0.4s;
+  transition: opacity 0.4s,border-radius 0.4s,top 0.4s;
+  background-color: black;
+  color: white;
+  height: 40px;
+  border: 1.2px solid black;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.add-to-cart-btn:hover{
+  border-radius: 25px;
+}
+.item:hover .add-to-cart-btn{
+opacity: 1;
+top: 35%;
+}
+.item:hover img{
+  opacity:0.3;
 }
