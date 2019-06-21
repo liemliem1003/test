@@ -1,0 +1,18 @@
+.footer-container{
+  margin-top: 10px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: gray;
+  font-size: 12px;
+}
+.footer-container div{
+  margin: 5px;
+  width: 300px;
+  text-align: left;
+}
+hr{
+  width: 30px;
+}

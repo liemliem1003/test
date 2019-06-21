@@ -3,7 +3,7 @@ import './about.css'
 
 function About(){
   return(
-    <div>about</div>
+    <div className="page">about</div>
   )
 }
 export default About

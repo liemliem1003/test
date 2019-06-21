@@ -1,0 +1,70 @@
+.page{
+  margin-top: 100px;
+
+}
+.login-frame{
+  width: 35%;
+  height: 240px;
+  margin: auto;
+  padding: 10px;
+  border: 1.2px solid black;
+  border-radius: 5px;
+
+}
+.group-btn-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group-btn-login a{
+  margin: 10px;
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.login-btn{
+  background: black;
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  -webkit-transition: border-radius 0.4s;
+  transition: border-radius 0.4s;
+}
+input{
+  height: 20px;
+}
+.login-btn:hover{
+  border-radius: 2px;
+}
+.register-btn{
+  margin-top: 10px;
+  background: black;
+  color: white;
+  width: 200px;
+  height: 30px;
+  border-radius: 25px;
+  -webkit-transition: border-radius 0.4s;
+  transition: border-radius 0.4s;
+}
+.register-btn:hover{
+  border-radius: 2px;
+
+}

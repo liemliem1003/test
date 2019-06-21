@@ -18,5 +18,19 @@
   display: flex;
 }
 .container{
-  margin: 100px 50px 50px 50px;
+  margin: 100px auto;
+}
+.list{
+  display: flex;
+}
+.shoppingCartItem{
+  position: relative;
+  width: 200px;
+  height: 280px;
+  background: white;
+  margin: 5px;
+  border: 1.2px solid black;
+  border-radius: 5px;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }

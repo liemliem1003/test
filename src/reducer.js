@@ -1,4 +1,6 @@
 import {
+  LOGIN,
+  CHANGEPAGE,
   ADD_PRODUCT_TO_CART,
   REMOVE_CART_ITEM,
   CHANGE_CART_QUANTITY,
@@ -11,6 +13,7 @@ import {
 import products from './component/productsList.js'
 
 const initialState = {
+  user: {name:"liem", pass:"as"},
   activePage: 'about',
   productDetail: null,
   shoppingCart: [],
@@ -18,6 +21,8 @@ const initialState = {
   products:products,
   initialProducts:products,
 }
+
+
 
 const sortByName = (state, x) => {
   const product = [
@@ -105,6 +110,15 @@ const checkout = state => {
     alert("Checkout successfully")
     return newAppState
 }
+const login = (state, user) => {
+    return {...state, user}
+}
+const changePage = (state, page) => {
+  const newState= {...state, activePage:page}
+
+
+  return {...newState}
+}
 
 const changeQuantity = (state, product) => {
   console.log(product);
@@ -129,10 +143,14 @@ export default function appState(state = initialState, action) {
       return addToCart(state, action.payload)
     case CHECKOUT:
       return checkout(state)
+    case CHANGEPAGE:
+      return changePage(state, action.payload)
     case CHANGE_CART_QUANTITY:
       return changeQuantity(state, action.payload)
     case SORTBYNAME:
       return sortByName(state, action.payload)
+    case LOGIN:
+      return login(state, action.payload)
     case SORTBYPRICE:
       return sortByPrice(state, action.payload)
     case NAVIGATE:

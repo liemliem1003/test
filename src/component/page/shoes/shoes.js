@@ -13,6 +13,8 @@ function Shoes(props){
       </div>
     )
   )
+  console.log(typeof list);
+  console.log(list);
   return(
     <div className="page">
       <div className="group-btn">
