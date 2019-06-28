@@ -19,15 +19,14 @@ nav ul {
 nav ul li {
   display: inline-block;
   padding: 5px 15px;
-  height: 25px;
-  line-height: 35px;
+  height: 5px;
+  line-height: 5px;
   text-transform: uppercase;
 }
 nav ul li:hover {
   cursor: pointer;
-  height: 32px;
-  line-height: 32px;
-  border-bottom: 3px solid black;
+  height: 2px;
+  line-height: 2px;
 }
 .home{
   font-size: 30px;

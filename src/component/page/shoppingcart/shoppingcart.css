@@ -24,6 +24,8 @@
   display: flex;
 }
 .shoppingCartItem{
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 1s;
   position: relative;
   width: 200px;
   height: 280px;
@@ -33,4 +35,20 @@
   border-radius: 5px;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
+}
+.group-item-btn{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+@-webkit-keyframes example {
+  from {opacity:0;
+  }
+  to {bopacity:1;
+  }
+}
+
+@keyframes example {
+  from {opacity:0;}
+  to {opacity:1;}
 }

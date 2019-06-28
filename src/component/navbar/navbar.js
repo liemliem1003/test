@@ -5,21 +5,26 @@ import {connect} from 'react-redux'
 import actions from '../../actions.js'
 
 function NavBar(props){
-  console.log(props);
+  
+  function ChangePage(page){
+    props.changePage(page)
+    props.changeProductsInPage(0)
+  }
   return(
     <div>
       <nav>
         <ul>
-          <li><Link onClick={()=>props.changePage("watches")} to="/watches">Watches</Link></li>
-          <li><Link onClick={()=>props.changePage("clothes")} to="/clothes">Clothes</Link></li>
-          <li><Link onClick={()=>props.changePage("shoes")} to="/shoes">Shoes</Link></li>
           <li className="home"><Link onClick={()=>props.changePage("home")} to="/">Home</Link></li>
+          <li><Link onClick={()=>ChangePage("watches")} to="/watches">Watches</Link></li>
+          <li><Link onClick={()=>ChangePage("clothes")} to="/clothes">Clothes</Link></li>
+          <li><Link onClick={()=>ChangePage("shoes")} to="/shoes">Shoes</Link></li>
           <li><Link onClick={()=>props.changePage("about")} to="/about">About</Link></li>
           <li><Link onClick={()=>props.changePage("contact")} to="/contact">Contact</Link></li>
           <li>{props.user===null ? <Link onClick={()=>props.changePage("login")} to="/login">Login</Link> : <Link to="/shoppingcart">Shopping Cart</Link>} </li>
         </ul>
+        <input type="text" style={{height:"22px"}} onChange={(x)=>props.findProductsByName(x.target.value)}/>
+        <button style={{height:"27px"}}><Link to="/searchresult">SEARCH</Link></button>
       </nav>
-
     </div>
   )
 }
@@ -31,6 +36,12 @@ const mapDispatchToProps = dispatch => {
   return {
     changePage: page => {
       dispatch(actions.changePage(page))
+    },
+    changeProductsInPage: page =>{
+      dispatch(actions.changeProductsInPage(page))
+    },
+    findProductsByName: text => {
+      dispatch(actions.findProductsByName(text))
     },
   }
 }

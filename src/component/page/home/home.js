@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import actions from '../../../actions'
 
 function Home(props){
+  console.log('path',props.match)
   function list(listProduct, start, quantity){
     let x =[];
     for (var i = start; i < quantity+start; i++) {
@@ -19,8 +20,6 @@ function Home(props){
     return x
   }
 
-  console.log(list(props.products.Watches, 3,4));
-  // console.log(Array.from());
   return(
     <div className="page">
       <div>WATCHES</div>

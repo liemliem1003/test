@@ -11,7 +11,21 @@ export const SORTBYNAME = 'SORTBYNAME'
 export const SORTBYPRICE = 'SORTBYPRICE'
 export const LOGIN = 'LOGIN'
 export const REGISTER = 'REGISTER'
+export const CHANGEPRODUCTSINPAGE = 'CHANGEPRODUCTSINPAGE'
+export const FINDPRODUCTSBYNAME = 'FINDPRODUCTSBYNAME'
 
+const changeProductsInPage = page =>{
+  return {
+    type: CHANGEPRODUCTSINPAGE,
+    payload: page,
+  }
+}
+const findProductsByName = text =>{
+  return {
+    type: FINDPRODUCTSBYNAME,
+    payload: text,
+  }
+}
 
 const setProducts = products => {
   return {
@@ -96,6 +110,8 @@ const _register = (user) => {
 }
 
 export default {
+  findProductsByName,
+  changeProductsInPage,
   _register,
   _login,
   setProducts,

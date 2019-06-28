@@ -26,3 +26,21 @@
 .page{
   margin-top: 100px;
 }
+.group-page-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.group-page-btn button{
+  width: 30px;
+  border: 1px;
+
+  margin: 2px;
+  -webkit-transition: border-radius 0.4s;
+  transition: border-radius 0.4s;
+  background-color: black;
+  color: white;
+}
+.group-page-btn button:hover{
+  border-radius: 25px;
+}
