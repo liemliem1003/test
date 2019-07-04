@@ -6,13 +6,14 @@ import actions from '../../../actions'
 
 
 function Clothes(props){
+  props.changePage("clothes")
   const propsOfItem = props.products.Clothes
   const x = 8
   let page = 0
   function DivideProducts(){
     const list=propsOfItem.map((product, i) => (
         <div key={i}>
-          <Item img={product.img} name={product.name} price={product.price} onClick={()=>props.addProduct(product)} details={product.details}/>
+          <Item img={product.img} kind={"Clothes"} id={product.id} stars={product.stars} name={product.name} price={product.price} details={product.details} onClick={()=>props.addProduct(product)}/>
         </div>
       )
     )
@@ -68,6 +69,9 @@ const mapDispatchToProps = dispatch => {
     },
     changeProductsInPage: page =>{
       dispatch(actions.changeProductsInPage(page))
+    },
+    changePage: page => {
+      dispatch(actions.changePage(page))
     },
   }
 }

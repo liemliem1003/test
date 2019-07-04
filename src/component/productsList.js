@@ -8,7 +8,7 @@ function CreateProducts(name){
   let a;
   for (var i = 0; i < 100; i++) {
     a={
-      stars:0,
+      stars:5,
       id:name+String(i),
       name:name+i,
       price:10000*i+1000,

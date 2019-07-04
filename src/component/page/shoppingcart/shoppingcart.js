@@ -9,22 +9,9 @@ function numberWithCommas(x) {
         x = x.replace(pattern, "$1,$2");
     return x;
 }
-// function Item(props){
-//   return(
-//     <div className="item">
-//       <img src={props.img}/>
-//       <div>{props.name}</div>
-//       <div>{numberWithCommas(props.price)}</div>
-//       <div className="group-it-btn">
-//         <button onClick={()=>console.log(props)}>-</button>
-//         <div>{props.quantity}</div>
-//         <button onClick={() => props.changeQuantity({product:props,condition:"plus"})}>+</button>
-//       </div>
-//     </div>
-//   )
-// }
 
 function ShoppingCart(props){
+  props.changePage("shoppingcart")
   var totalPrice = 0
   props.shoppingCart.forEach(function(element){
     totalPrice+=element.price*element.quantity
@@ -59,6 +46,9 @@ const mapDispatchToProps = dispatch => {
     },
     changeQuantity: (product) => {
       dispatch(actions.changeQuantity(product))
+    },
+    changePage: page => {
+      dispatch(actions.changePage(page))
     },
   }
 }

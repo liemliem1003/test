@@ -10,20 +10,31 @@ import {
   SORTBYNAME,
   SORTBYPRICE,
   CHANGEPRODUCTSINPAGE,
-  FINDPRODUCTSBYNAME
+  FINDPRODUCTSBYNAME,
+  SETSTARS
 } from './actions'
 import products from './component/productsList.js'
 
 const initialState = {
   page: 0,
   user: null,
-  activePage: 'about',
+  activePage: null,
   productDetail: null,
   shoppingCart: [],
   successShoopingCart: [],
   products:products,
   initialProducts:products,
   foundProduct: []
+}
+
+const setStars = (state, obj)=>{
+  const list = {...state.products}
+  for (var i = 0; i < list[obj.kind].length; i++) {
+    if (list[obj.kind][i].id == obj.product.id) {
+      list[obj.kind][i].stars = obj.star
+    }
+  }
+  return {...state,producs:list}
 }
 
 const changeProductsInPage=(state,page)=>{
@@ -193,6 +204,8 @@ export default function appState(state = initialState, action) {
       return findProductsByName(state, action.payload)
     case SORTBYPRICE:
       return sortByPrice(state, action.payload)
+    case SETSTARS:
+      return setStars(state, action.payload)
     case NAVIGATE:
       return {...state, activePage: action.payload}
     default:

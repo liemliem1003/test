@@ -5,6 +5,7 @@ import actions from '../../../actions'
 import Item from '../../item/item.js'
 
 function SearchResult(props){
+  props.changePage("searchresult")
   const propsOfItem = props.foundProduct
   const x = 8
   function DivideProducts(){
@@ -39,7 +40,7 @@ function SearchResult(props){
   return(
     <div className="page">
       {propsOfItem.length == 0 ? <div>Nothing</div> : <div className="list">{DivideProducts(8)[String(props.page)]}</div>}
-      <div className="group-page-btn">{CreateButtons()}</div>
+      <div className="group-page-btn group-btn-in-searchresult">{CreateButtons()}</div>
     </div>
   )
 }
@@ -51,6 +52,9 @@ const mapDispatchToProps = dispatch => {
   return {
     changeProductsInPage: page =>{
       dispatch(actions.changeProductsInPage(page))
+    },
+    changePage: page => {
+      dispatch(actions.changePage(page))
     },
   }
 }

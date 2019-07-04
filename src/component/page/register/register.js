@@ -4,6 +4,7 @@ import actions from '../../../actions'
 import './register.css'
 
 function Register(props){
+  props.changePage("register")
   const user={name:"", pass:""}
   return(
     <div className="page">
@@ -22,6 +23,9 @@ const mapDispatchToProps = dispatch => {
   return {
     register: user => {
       dispatch(actions._register(user))
+    },
+    changePage: page => {
+      dispatch(actions.changePage(page))
     },
   }
 }

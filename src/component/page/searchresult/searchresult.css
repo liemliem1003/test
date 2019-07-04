@@ -1,0 +1,7 @@
+.group-btn-in-searchresult{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 830px;
+  margin: auto;
+}

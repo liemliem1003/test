@@ -1,5 +1,7 @@
 import React from 'react'
 import './item.css'
+import {connect} from 'react-redux'
+import actions from '../../actions'
 
 function numberWithCommas(x) {
     x = x.toString();
@@ -8,6 +10,7 @@ function numberWithCommas(x) {
         x = x.replace(pattern, "$1,$2");
     return x;
 }
+
 function Item(props){
   return(
     <div className="item">
@@ -16,18 +19,30 @@ function Item(props){
       <div>{props.name}</div>
       <div>{numberWithCommas(props.price)}</div>
       <div style={{fontSize:"10px", width:"80%", margin:"auto"}}>{props.details}</div>
-      <Rating />
+      <Rating rate={props.stars} setStars={(x)=>props.setStars({kind:props.kind,product:props,star:x})}/>
       <button className="add-to-cart-btn" onClick={props.onClick}>ADD TO CART</button>
     </div>
   )
 }
-export default Item
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setStars: obj => {
+      dispatch(actions.setStars(obj))
+    },
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Item)
+
 const Star = props => {
   const {filled,value, onClick} = props
   const starClick = () => {
     onClick(value)
   }
-
   return (
     <span className="fa fa-star" style={{color:filled ? "gold" : "black", width:"5px"}} onClick={starClick}></span>
   )
@@ -35,10 +50,13 @@ const Star = props => {
 
 class Rating extends React.Component{
   state = {
-    rate: this.props.rate
+    rate: this.props.rate,
+    setStars: x=>this.props.setStars(x)
   }
   onStarClick = star => {
     this.setState({rate: star})
+    console.log("1");
+    this.state.setStars(star)
   }
   render(){
     const {rate} = this.state

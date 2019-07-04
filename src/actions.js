@@ -13,6 +13,14 @@ export const LOGIN = 'LOGIN'
 export const REGISTER = 'REGISTER'
 export const CHANGEPRODUCTSINPAGE = 'CHANGEPRODUCTSINPAGE'
 export const FINDPRODUCTSBYNAME = 'FINDPRODUCTSBYNAME'
+export const SETSTARS = 'SETSTARS'
+
+const setStars = stars =>{
+  return {
+    type: SETSTARS,
+    payload: stars
+  }
+}
 
 const changeProductsInPage = page =>{
   return {
@@ -122,5 +130,6 @@ export default {
   changeQuantity,
   sortByName,
   sortByPrice,
-  changePage
+  changePage,
+  setStars
 }

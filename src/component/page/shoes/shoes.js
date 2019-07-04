@@ -3,16 +3,16 @@ import './shoes.css'
 import Item from '../../item/item.js'
 import {connect} from 'react-redux'
 import actions from '../../../actions'
-import Product from '../product/product.js'
 
 function Shoes(props){
+  props.changePage("shoes")
   const propsOfItem = props.products.Shoes
   const x = 8
   let page = 0
   function DivideProducts(){
     const list=propsOfItem.map((product, i) => (
         <div key={i}>
-          <Item img={product.img} name={product.name} price={product.price} details={product.details} onClick={()=>props.addProduct(product)}/>
+          <Item img={product.img} kind={"Shoes"} id={product.id} stars={product.stars} name={product.name} price={product.price} details={product.details} onClick={()=>props.addProduct(product)}/>
         </div>
       )
     )
@@ -68,6 +68,9 @@ const mapDispatchToProps = dispatch => {
     },
     changeProductsInPage: page =>{
       dispatch(actions.changeProductsInPage(page))
+    },
+    changePage: page => {
+      dispatch(actions.changePage(page))
     },
   }
 }
