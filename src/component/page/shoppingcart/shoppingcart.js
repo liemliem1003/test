@@ -50,6 +50,7 @@ const mapDispatchToProps = dispatch => {
     changePage: page => {
       dispatch(actions.changePage(page))
     },
+
   }
 }
 

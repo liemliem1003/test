@@ -38,11 +38,7 @@ function SearchResult(props){
           <img src={product.img}/>
           <div>{product.name}</div>
           <div>{numberWithCommas(product.price)}</div>
-          <div className="group-item-btn">
-            <button onClick={() => props.changeQuantity({product:product,condition:"minus"})}>-</button>
-            <div style={{width:"30px"}}>{product.quantity}</div>
-            <button onClick={() => props.changeQuantity({product:product,condition:"plus"})}>+</button>
-          </div>
+          <button  onClick={()=>props.addProduct(product)}>ADD TO CART</button>
           <div style={{color:"white", background:"red", margin:"10px 0 0 0",}}>HOT</div>
         </div>
       )
@@ -87,6 +83,9 @@ const mapDispatchToProps = dispatch => {
     },
     changePage: page => {
       dispatch(actions.changePage(page))
+    },
+    addProduct: product => {
+      dispatch(actions.addProduct(product))
     },
   }
 }
