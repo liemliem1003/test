@@ -2,16 +2,48 @@ import React from 'react'
 import './searchresult.css'
 import {connect} from 'react-redux'
 import actions from '../../../actions'
-import Item from '../../item/item.js'
+// import Item from '../../item/item.js'
+
+// function Item(product){
+//   return(
+//     <div>
+//       <img src={product.img}/>
+//       <div>{product.name}</div>
+//       <div>{numberWithCommas(product.price)}</div>
+//       <div className="group-item-btn">
+//         <button onClick={() => props.changeQuantity({product:product,condition:"minus"})}>-</button>
+//         <div style={{width:"30px"}}>{product.quantity}</div>
+//         <button onClick={() => props.changeQuantity({product:product,condition:"plus"})}>+</button>
+//       </div>
+//       <div style={{color:"white", background:"red", margin:"10px 0 0 0",}}>HOT</div>
+//     </div>
+//   )
+// }
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
 
 function SearchResult(props){
+  // <Item img={product.img} name={product.name} price={product.price} onClick={()=>props.addProduct(product)} details={product.details}/>
   props.changePage("searchresult")
   const propsOfItem = props.foundProduct
   const x = 8
   function DivideProducts(){
     const list=propsOfItem.map((product, i) => (
-        <div key={i}>
-          <Item img={product.img} name={product.name} price={product.price} onClick={()=>props.addProduct(product)} details={product.details}/>
+        <div className="shoppingCartItem" key={i}>
+          <img src={product.img}/>
+          <div>{product.name}</div>
+          <div>{numberWithCommas(product.price)}</div>
+          <div className="group-item-btn">
+            <button onClick={() => props.changeQuantity({product:product,condition:"minus"})}>-</button>
+            <div style={{width:"30px"}}>{product.quantity}</div>
+            <button onClick={() => props.changeQuantity({product:product,condition:"plus"})}>+</button>
+          </div>
+          <div style={{color:"white", background:"red", margin:"10px 0 0 0",}}>HOT</div>
         </div>
       )
     )
