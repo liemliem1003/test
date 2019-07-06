@@ -12,7 +12,7 @@ function Login(props){
       <h1>Login</h1>
       <div className="login-frame">
         <div>Account:  <input type="text" placeholder="Account" onChange={(i) => user.name=i.target.value}/></div>
-        <div>Password: <input type="text" placeholder="Password" onChange={(i) => user.pass=i.target.value}/></div>
+        <div>Password: <input type="password" placeholder="Password" onChange={(i) => user.pass=i.target.value}/></div>
         <div className="group-btn-login">
           <a href="#">forget password?</a>
         </div>

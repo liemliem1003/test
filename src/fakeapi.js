@@ -26,11 +26,13 @@ export function register(user){
         reject({message: 'account already taken'})
         alert("account already taken")
       }else{
+        alert("regist successfully")
         users.push(user)
         localStorage.setItem('users', JSON.stringify(users))
         resolve({status:200})
+        console.log(typeof user.login);
+        console.log(user.login);
       }
     },1000)
-    console.log(users);
   })
 }

@@ -2,6 +2,9 @@ import React from 'react'
 import {connect} from 'react-redux'
 import actions from '../../../actions'
 import './register.css'
+import {Link} from 'react-router-dom'
+
+function login(){return(<Link to="/register"/>)}
 
 function Register(props){
   props.changePage("register")
@@ -12,8 +15,8 @@ function Register(props){
       <h1>Register</h1>
       <div className="login-frame">
         <div>Account:  <input type="text" placeholder="Account" onChange={(i) => user.name=i.target.value}/></div>
-        <div>Password: <input type="text" placeholder="Password" onChange={(i) => user.pass=i.target.value}/></div>
-        <button className="login-btn" onClick={()=>props.register({name:user.name,pass:user.pass})}>Register</button>
+        <div>Password: <input type="password" placeholder="Password" onChange={(i) => user.pass=i.target.value}/></div>
+        <button className="login-btn" onClick={()=>props.register({name:user.name,pass:user.pass,login:login()})}>Register</button>
       </div>
     </div>
   )

@@ -106,12 +106,14 @@ const _login = (user) => {
   }
 }
 const _register = (user) => {
+  console.log(user);
   return dispatch => {
     const _user = register(user).then(res=>{
       if(res.err){
 
       }else{
         dispatch({type: REGISTER, payload: res.data})
+        console.log(res.data);
       }
     })
   }
